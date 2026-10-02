@@ -150,7 +150,7 @@ export default function Contact() {
 
           <iframe
             title="Galaxy Mobiles location"
-            src="https://www.google.com/maps?q=Thodupuzha%20Idukki%20Kerala&output=embed"
+            src="https://share.google/ziXR7OfWsn2YlRZl7"
             className="h-full min-h-[330px] w-full border-0"
             loading="lazy"
           />
