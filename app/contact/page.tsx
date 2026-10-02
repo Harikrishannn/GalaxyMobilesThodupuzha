@@ -3,20 +3,24 @@ import {
   MapPin,
   MessageCircle,
   Phone,
+  Navigation,
 } from "lucide-react";
 
 import Image from "next/image";
 import { gallery, site, wa } from "@/data/site";
 
+const googleMapsUrl =
+  "https://maps.app.goo.gl/UALx2iCNg5DJjktQ7?g_st=ac";
+
+const exactLocationUrl =
+  "https://www.google.com/maps/search/?api=1&query=Galaxy+Mobiles,+Thodupuzha,+Idukki,+Kerala";
+
 export default function Contact() {
   return (
     <main>
-      {/* =========================
-          HERO / STORE INTRO
-      ========================== */}
+      {/* HERO */}
       <section className="container mt-4">
         <div className="paper grid gap-6 px-6 py-9 sm:px-10 md:grid-cols-[1fr_auto] md:items-center">
-          
           <div>
             <div className="text-[9px] font-bold tracking-[.18em] text-[#8a8379]">
               COME VISIT US
@@ -26,13 +30,12 @@ export default function Contact() {
               Visit Our Store
             </h1>
 
-            <p className="mt-2 text-[11px] text-[#6d675f]">
-              Visit Galaxy Mobiles and explore our latest mobiles,
-              accessories, services and exchange offers.
+            <p className="mt-2 max-w-xl text-[11px] leading-5 text-[#6d675f]">
+              Visit Galaxy Mobiles, Thodupuzha and explore our latest
+              mobiles, accessories, services, exchange offers and more.
             </p>
           </div>
 
-          {/* Rating */}
           <div>
             <div className="serif text-3xl font-bold">
               4.8 / 5
@@ -46,19 +49,13 @@ export default function Contact() {
               Based on 200+ reviews
             </div>
           </div>
-
         </div>
       </section>
 
-
-      {/* =========================
-          CONTACT DETAILS + MAP
-      ========================== */}
+      {/* CONTACT DETAILS + MAP */}
       <section className="container mt-7 grid gap-4 lg:grid-cols-[.9fr_1.1fr]">
-
-        {/* LEFT CONTACT CARDS */}
+        {/* LEFT */}
         <div className="grid gap-3">
-
           {/* CALL */}
           <a
             href={`tel:${site.phone}`}
@@ -78,7 +75,6 @@ export default function Contact() {
               </small>
             </span>
           </a>
-
 
           {/* WHATSAPP */}
           <a
@@ -104,7 +100,6 @@ export default function Contact() {
             </span>
           </a>
 
-
           {/* LOCATION */}
           <div className="paper flex items-center gap-4 p-5">
             <span className="rounded-full bg-[#f5c72c] p-3">
@@ -116,14 +111,15 @@ export default function Contact() {
                 Location
               </b>
 
-              <small className="text-[9px] text-[#8a8379]">
-                {site.location}
+              <small className="text-[9px] leading-4 text-[#8a8379]">
+                Galaxy Mobiles
+                <br />
+                Thodupuzha, Idukki, Kerala
               </small>
             </span>
           </div>
 
-
-          {/* OPENING HOURS */}
+          {/* HOURS */}
           <div className="paper flex items-center gap-4 p-5">
             <span className="rounded-full bg-[#f5c72c] p-3">
               <Clock size={17} />
@@ -139,48 +135,70 @@ export default function Contact() {
               </small>
             </span>
           </div>
-
         </div>
 
+        {/* MAP */}
+        <div className="paper overflow-hidden">
+          <div className="relative min-h-[330px] w-full bg-[#f2efe9]">
+            <iframe
+              title="Galaxy Mobiles Thodupuzha Location"
+              src={exactLocationUrl}
+              className="h-[330px] w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
 
-        {/* =========================
-            GOOGLE MAP
-        ========================== */}
-        <div className="paper min-h-[330px] overflow-hidden">
+            {/* MAP OVERLAY */}
+            <div className="pointer-events-none absolute left-4 top-4">
+              <div className="rounded-xl bg-white px-4 py-3 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <MapPin
+                    size={16}
+                    className="text-[#e4b600]"
+                  />
 
-          <iframe
-            title="Galaxy Mobiles location"
-            src="https://share.google/ziXR7OfWsn2YlRZl7"
-            className="h-full min-h-[330px] w-full border-0"
-            loading="lazy"
-          />
+                  <div>
+                    <div className="text-[10px] font-bold">
+                      Galaxy Mobiles
+                    </div>
 
-          <div className="p-3">
-
-            {/* YOUR GOOGLE MAPS SHARE LINK */}
-            <a
-              href="https://share.google/ziXR7OfWsn2YlRZl7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-lg bg-[#171717] px-4 py-2 text-[9px] font-bold text-white transition hover:bg-[#333]"
-            >
-              Get Directions →
-            </a>
-
+                    <div className="text-[8px] text-[#8a8379]">
+                      Thodupuzha, Idukki
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-        </div>
+          {/* DIRECTIONS BUTTON */}
+          <div className="flex flex-wrap gap-2 p-3">
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#171717] px-4 py-3 text-[9px] font-bold text-white transition hover:bg-[#333]"
+            >
+              <Navigation size={13} />
+              Get Exact Directions
+            </a>
 
+            <a
+              href={exactLocationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-[#ded9d0] bg-white px-4 py-3 text-[9px] font-bold text-[#171717] transition hover:bg-[#f7f5f1]"
+            >
+              <MapPin size={13} />
+              View on Google Maps
+            </a>
+          </div>
+        </div>
       </section>
 
-
-      {/* =========================
-          STORE IMAGE
-      ========================== */}
+      {/* STORE IMAGE */}
       <section className="container mt-10">
-
         <div className="relative h-[260px] overflow-hidden rounded-[14px]">
-
           <Image
             src={gallery[0].src}
             alt="Galaxy Mobiles store"
@@ -189,25 +207,22 @@ export default function Contact() {
           />
 
           <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent p-6 text-white">
+            <div>
+              <div className="text-[9px] font-medium tracking-[.2em] text-white/70">
+                GALAXY MOBILES
+              </div>
 
-            <div className="serif text-3xl font-bold">
-              Galaxy Mobiles
+              <div className="serif mt-1 text-3xl font-bold">
+                Visit Our Store
+              </div>
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* =========================
-          WHATSAPP CTA
-      ========================== */}
+      {/* WHATSAPP CTA */}
       <section className="container mt-7">
-
         <div className="flex flex-col gap-3 rounded-[12px] bg-[#f5c72c] p-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
-
           <div>
             <b className="text-sm">
               Have any questions?
@@ -217,7 +232,6 @@ export default function Contact() {
               Chat with us on WhatsApp →
             </div>
           </div>
-
 
           <a
             href={wa(
@@ -230,19 +244,12 @@ export default function Contact() {
             <MessageCircle size={14} />
             Chat on WhatsApp
           </a>
-
         </div>
-
       </section>
 
-
-      {/* =========================
-          BOTTOM CONTACT CTA
-      ========================== */}
+      {/* FINAL CONTACT CTA */}
       <section className="container mb-10 mt-7">
-
         <div className="paper flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
-
           <div>
             <div className="text-[9px] font-bold tracking-[.18em] text-[#8a8379]">
               GALAXY MOBILES
@@ -252,15 +259,14 @@ export default function Contact() {
               Need help choosing a mobile?
             </h2>
 
-            <p className="mt-1 text-[10px] text-[#6d675f]">
-              Contact us and our team will help you find the right
-              device for your needs.
+            <p className="mt-1 max-w-xl text-[10px] leading-5 text-[#6d675f]">
+              Contact us and our team will help you find the
+              right device for your needs.
             </p>
           </div>
 
-
           <div className="flex flex-wrap gap-2">
-
+            {/* CALL */}
             <a
               href={`tel:${site.phone}`}
               className="inline-flex items-center gap-2 rounded-full bg-[#171717] px-5 py-3 text-[10px] font-bold text-white transition hover:bg-[#333]"
@@ -269,6 +275,7 @@ export default function Contact() {
               Call Now
             </a>
 
+            {/* WHATSAPP */}
             <a
               href={wa(
                 "Hello Galaxy Mobiles, I need help choosing a mobile."
@@ -280,13 +287,9 @@ export default function Contact() {
               <MessageCircle size={14} />
               WhatsApp
             </a>
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
 }
