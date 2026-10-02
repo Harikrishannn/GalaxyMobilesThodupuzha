@@ -1,4 +1,4 @@
-export const site={name:'Galaxy Mobiles',location:'Thodupuzha, Idukki, Kerala, India',phone:'+91 93867 87887',whatsapp:'919386787887',hours:'9:00 AM – 8:00 PM (Everyday)'};
+export const site={name:'Galaxy Mobiles',location:'Thodupuzha, Idukki, Kerala, India',phone:'+91 93867 87887',whatsapp:'+91 9386787887',hours:'9:00 AM – 8:00 PM (Everyday)'};
 export const wa=(message:string)=>`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 export const brands=['Apple','Samsung','Xiaomi','Vivo','Oppo','OnePlus','Realme','POCO'];
 export const services=[
