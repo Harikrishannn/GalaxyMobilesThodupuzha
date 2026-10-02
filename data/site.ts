@@ -1,8 +1,8 @@
 export const site = {
   name: 'Galaxy Mobiles',
   location: 'Thodupuzha, Idukki, Kerala, India',
-  phone: '+91 9388787887',
-  whatsapp: '+91 9388787887',
+  phone: '+91 93887 87887',
+  whatsapp: '919388787887',
   hours: '9:00 AM – 8:00 PM (Everyday)'
 };
 
