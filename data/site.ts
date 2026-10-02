@@ -191,7 +191,7 @@ export const gallery = [
   },
   {
     cat: 'Store',
-    src: 'public/galaxy-store.jpg',
+    src: '/public/image/galaxy-store.jpg',
     alt: 'Galaxy Mobiles store, Thodupuzha'
   },
   {
