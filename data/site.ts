@@ -191,8 +191,8 @@ export const gallery = [
   },
   {
     cat: 'Store',
-    src: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=1000&q=85',
-    alt: 'Phone display'
+    src: 'assets/galaxy-store.jpg',
+    alt: 'Galaxy Mobiles store, Thodupuzha'
   },
   {
     cat: 'New Mobiles',
